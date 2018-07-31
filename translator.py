@@ -1,5 +1,4 @@
-## Final purpose: translates a given genome into its
-##     respective polypeptide   
+""" Final Goal: print translated genome as its respective polypeptide """
 
 
 ## try out the os module here at some point 
@@ -11,7 +10,7 @@ f.close()
 stop_codons = ['TAG', 'TAA', 'TGA']
 start_codon = 'ATG'
 
-
+""" prints every open reading frame in the phi bacterial genome  """
 def print_orfs(genome):
     pos = 0
     orf_len = 0
