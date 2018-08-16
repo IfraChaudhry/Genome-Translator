@@ -1,16 +1,12 @@
-""" Final Goal: print translated genome as its respective polypeptide """
+""" Final Goal: print translated genome with its respective polypeptides """
 
-
-## try out the os module here at some point 
-f = open('phi genome.txt', 'r')
-phi_genome = f.readlines()
-f.close()
 
 ## start and stop codons to determine ORFs
 stop_codons = ['TAG', 'TAA', 'TGA']
 start_codon = 'ATG'
 
-""" prints every open reading frame in the phi bacterial genome  """
+## prints every open reading frame in genome
+## print_orfs: (listof Str) -> None
 def print_orfs(genome):
     pos = 0
     orf_len = 0
@@ -29,4 +25,12 @@ def print_orfs(genome):
             orf_len += 3
         pos += 3
         
-print_orfs(phi_genome[0])
+## prints the open reading frames of the given genome
+## translate: Str -> None 
+def translate(gen_txt):
+    f = open(gen_txt, 'r')
+    gen_lst = f.readlines()
+    f.close() 
+    print_orfs(gen_lst[0])
+    
+translate('phi genome.txt')
